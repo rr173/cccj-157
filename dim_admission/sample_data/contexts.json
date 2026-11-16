@@ -1,0 +1,19 @@
+{
+  "contexts": [
+    {"id": "C1", "segment": [["D", "m1"]]},
+    {"id": "C2", "segment": [["D", "m0"]]},
+    {"id": "C3", "segment": [["D", "m1"]], "scenario": [["D2", "n1"]]},
+    {"id": "C4", "segment": [["D", "m1"], ["DX", "x1"]], "scenario": [["DX", "x1"]]},
+    {"id": "C5", "segment": [], "scenario": [["D2", "d2def"]]},
+    {"id": "C6", "segment": [["D", "m1"]], "scenario": [["D2", "d2def"]]},
+    {"id": "C7", "segment": [], "scenario": []},
+    {"id": "C8", "segment": [["D", "m1"], ["DX", "GHOST"]]},
+    {"id": "C9", "segment": [["D", "m1"]], "scenario": [["D2", "n1"]]},
+    {"id": "C10", "segment": [["D", "m0"]]},
+    {"id": "C11", "segment": [["D", "m1"], ["D", "m0"]]},
+    {"id": "C12", "segment": [["D", "m0"]]},
+    {"id": "C13", "segment": [], "scenario": [["D2", "d2def"]]},
+    {"id": "C15", "segment": [], "scenario": [["D", "m1"]]},
+    {"id": "C16", "segment": [["D", "m1"], ["DX", "x1"]]}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "facts": [
+    {"fact_id": "F1", "concept": "Q", "context_id": "C1", "value": "100"},
+    {"fact_id": "F2", "concept": "Q", "context_id": "C2", "value": "101"},
+    {"fact_id": "F3", "concept": "Q", "context_id": "C3", "value": "102"},
+    {"fact_id": "F4", "concept": "Q4", "context_id": "C4", "value": "103"},
+    {"fact_id": "F5", "concept": "Q4", "context_id": "C5", "value": "104"},
+    {"fact_id": "F6", "concept": "Q", "context_id": "C6", "value": "105"},
+    {"fact_id": "F7", "concept": "Q", "context_id": "C7", "value": "106"},
+    {"fact_id": "F8", "concept": "Q", "context_id": "C8", "value": "107"},
+    {"fact_id": "F9", "concept": "Q", "context_id": "C9", "value": "108"},
+    {"fact_id": "F10", "concept": "Q", "context_id": "C10", "value": "109"},
+    {"fact_id": "F11", "concept": "Q", "context_id": "C11", "value": "110"},
+    {"fact_id": "F12", "concept": "Q2", "context_id": "C12", "value": "111"},
+    {"fact_id": "F13", "concept": "Q4", "context_id": "C13", "value": "112"},
+    {"fact_id": "F14", "concept": "U", "context_id": "C1", "value": "113"},
+    {"fact_id": "F15", "concept": "Q", "context_id": "C15", "value": "114"},
+    {"fact_id": "F16", "concept": "Q", "context_id": "C16", "value": "115"}
+  ]
+}

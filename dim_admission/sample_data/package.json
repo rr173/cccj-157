@@ -1,0 +1,68 @@
+{
+  "description": "维度事实准入器演练分类包（XBRL 风格子集，非完整 XBRL）",
+  "roles": [
+    {"id": "r", "description": "主继承起始角色（H 组）"},
+    {"id": "s", "description": "继承切换后的角色"},
+    {"id": "t", "description": "cube H/HW 的展开角色"},
+    {"id": "r3", "description": "K cube 组"},
+    {"id": "r4", "description": "not_all 组（继承只覆盖 P,Q）"},
+    {"id": "r5", "description": "DW 默认不可用演示组"},
+    {"id": "r6", "description": "open cube 组（继承只覆盖 P,Q）"},
+    {"id": "r_other", "description": "无关角色，验证角色隔离"}
+  ],
+  "concepts": [
+    {"id": "P", "type": "primary"}, {"id": "Q", "type": "primary"},
+    {"id": "Q2", "type": "primary"}, {"id": "Q3", "type": "primary"},
+    {"id": "Q4", "type": "primary"}, {"id": "U", "type": "primary"},
+    {"id": "H", "type": "cube"}, {"id": "K", "type": "cube"},
+    {"id": "N", "type": "cube"}, {"id": "HW", "type": "cube"},
+    {"id": "HO", "type": "cube"},
+    {"id": "D", "type": "dimension"}, {"id": "D2", "type": "dimension"},
+    {"id": "DW", "type": "dimension"}, {"id": "DX", "type": "dimension"},
+    {"id": "m0", "type": "member"}, {"id": "m1", "type": "member"},
+    {"id": "n1", "type": "member"}, {"id": "d2def", "type": "member"},
+    {"id": "wdef", "type": "member"}, {"id": "x1", "type": "member"}
+  ],
+  "comment_GHOST": "上下文 C8 引用的 GHOST 故意不在概念表中，构成 E_MEMBER_UNKNOWN 结构错误",
+  "defaults": [
+    {"dimension": "D2", "member": "d2def"},
+    {"dimension": "DW", "member": "wdef"}
+  ],
+  "edges": [
+    {"edge_id": "e_inh_p_q", "role": "r", "source": "P", "target": "Q", "target_role": "s"},
+    {"edge_id": "e_inh3_p_q", "role": "r3", "source": "P", "target": "Q", "target_role": "s"},
+    {"edge_id": "e_inh5_p_q", "role": "r5", "source": "P", "target": "Q", "target_role": "s"},
+    {"edge_id": "e_inh4_p_q", "role": "r4", "source": "P", "target": "Q"},
+    {"edge_id": "e_inh6_p_q", "role": "r6", "source": "P", "target": "Q"},
+    {"edge_id": "e_inh_q_q2", "role": "s", "source": "Q", "target": "Q2"},
+    {"edge_id": "e_inh_q_q3", "role": "s", "source": "Q", "target": "Q3"},
+    {"edge_id": "e_inh_q_q4", "role": "s", "source": "Q", "target": "Q4"},
+
+    {"edge_id": "e_a_h", "role": "r", "source": "P", "target": "H", "target_role": "t",
+     "polarity": "all", "context_element": "segment", "closed": true},
+    {"edge_id": "e_a_k", "role": "r3", "source": "P", "target": "K", "target_role": "r3",
+     "polarity": "all", "context_element": "scenario", "closed": true},
+    {"edge_id": "e_a_n", "role": "r4", "source": "P", "target": "N", "target_role": "r4",
+     "polarity": "not_all", "context_element": "segment", "closed": true},
+    {"edge_id": "e_a_dw", "role": "r5", "source": "P", "target": "HW", "target_role": "t",
+     "polarity": "all", "context_element": "segment", "closed": true},
+    {"edge_id": "e_a_open", "role": "r6", "source": "P", "target": "HO", "target_role": "r6",
+     "polarity": "all", "context_element": "segment", "closed": false},
+
+    {"edge_id": "e_h_d", "role": "t", "source": "H", "target": "D"},
+    {"edge_id": "e_hw_dw", "role": "t", "source": "HW", "target": "DW"},
+    {"edge_id": "e_k_d2", "role": "r3", "source": "K", "target": "D2"},
+    {"edge_id": "e_n_d", "role": "r4", "source": "N", "target": "D"},
+    {"edge_id": "e_ho_d", "role": "r6", "source": "HO", "target": "D"},
+
+    {"edge_id": "e_d_m0", "role": "t", "source": "D", "target": "m0", "usable": false},
+    {"edge_id": "e_m0_m1", "role": "t", "source": "m0", "target": "m1"},
+    {"edge_id": "e_d2_n1", "role": "r3", "source": "D2", "target": "n1"},
+    {"edge_id": "e_d2_def", "role": "r3", "source": "D2", "target": "d2def"},
+    {"edge_id": "e_d_m1_r4", "role": "r4", "source": "D", "target": "m1"},
+    {"edge_id": "e_d_m1_r6", "role": "r6", "source": "D", "target": "m1"},
+    {"edge_id": "e_dw_wdef", "role": "t", "source": "DW", "target": "wdef", "usable": false},
+    {"edge_id": "e_d_m0_other", "role": "r_other", "source": "D", "target": "m0"},
+    {"edge_id": "e_dx_x1", "role": "t", "source": "DX", "target": "x1"}
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "description": "补丁：在 t 角色下为 m0 增加第二条 usable 入边（不同 edge_id 的独立来源证据）",
+  "edges": [
+    {"edge_id": "e_d_m0_alt", "role": "t", "source": "D", "target": "m0", "usable": true}
+  ]
+}
